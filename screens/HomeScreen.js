@@ -19,10 +19,8 @@ export default function HomeScreen() {
 
 
   const handleSearch = search=>{
-    // console.log('value: ',search);
     if(search && search.length>2)
       fetchLocations({cityName: search}).then(data=>{
-        // console.log('got locations: ',data);
         setLocations(data);
       })
   }
@@ -55,7 +53,6 @@ export default function HomeScreen() {
       cityName,
       days: '7'
     }).then(data=>{
-      // console.log('got data: ',data.forecast.forecastday);
       setWeather(data);
       setLoading(false);
     })
@@ -106,8 +103,7 @@ export default function HomeScreen() {
                         ):(
                           <MagnifyingGlassIcon size="25" color="white" />
                         )
-                      }
-                      
+                      }  
                   </TouchableOpacity>
                 </View>
                 {
@@ -131,7 +127,6 @@ export default function HomeScreen() {
                     </View>
                   ):null
                 }
-                
               </View>
 
               {/* forecast section */}
@@ -215,15 +210,11 @@ export default function HomeScreen() {
                       )
                     })
                   }
-                  
                 </ScrollView>
               </View>
-              
-            
             </SafeAreaView>
           )
         }
-      
     </View>
   )
 }
